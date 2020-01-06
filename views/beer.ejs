@@ -1,0 +1,9 @@
+<h3>Browse all the tasty suds below.</h2>
+<h4>Log in or Sign up to save a beer as one of your Favorites</h3>
+<hr>
+
+<ul>
+    <% beer.forEach((brew) => { %>
+        <li><a href="#"><%= brew.name %></a></li>
+    <% }) %>
+</ul>
