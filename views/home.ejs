@@ -1,11 +1,16 @@
 <h1>This is the TacoTavern Home Page!</h1>
 
 <h3>Welcome!</h3>
-<h3><a href="#">Log in</a></h3>
+<h3><a href="/auth/login">Log in</a></h3>
 Or
-<h3><a href="#">Sign Up</a></h3>
+<h3><a href="/auth/signup">Sign Up</a></h3>
 
 <br>
 
-<button type="button">Browse Our Beers!</button>
-<button type="button">Browse Our Tacos!</button>
+<form method="GET" action="/beer">
+    <button type="submit">Browse Our Beers!</button>
+</form>
+
+<form method="GET" action="/taco">
+    <button type="submit">Get me a Taco!</button>
+</form> 

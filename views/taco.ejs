@@ -1,2 +1,32 @@
 <h2>Browse the mouth-watering Taco recipes below!</h2>
 <h3>Log in or Sign up to save a taco recipe as one of your Favorites</h3>
+<hr>
+
+<h4><strong><%= taco.name %></strong></h4>
+<br>
+
+<a href="<%= taco.url %>">See this recipe</a>
+<br>
+
+<% if(taco.base_layer) { %>
+    <p><%= taco.base_layer.name %></p>
+    <a href="<%= taco.base_layer.url %>">See the Base-Layer recipe</a>
+<% } %>
+<br>
+
+<% if(taco.condiment) { %>
+    <p><%= taco.condiment.name %></p>
+    <a href="<%= taco.condiment.url %>">See this Condiment recipe</a>
+<% } %>
+<br>
+
+<% if(taco.shell) { %>
+    <p><%= taco.shell.name %></p>
+    <a href="<%= taco.shell.url %>">See this Taco Shell recipe</a>
+<% } %>
+<br>
+
+<% if(taco.mixin) { %>
+    <p><%= taco.mixin.name %></p>
+    <a href="<%= taco.mixin.url %>">See this Taco Mix-in recipe</a>
+<% } %>

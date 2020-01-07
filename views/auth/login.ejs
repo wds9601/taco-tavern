@@ -1,0 +1,30 @@
+<h1>Login</h1>
+
+<div class="row">
+    <form method="POST" action="/auth/login" class="col s12">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate" name="email">
+                    <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" name="password">
+                      <label for="password">Password</label>
+                  </div>
+            </div>
+            <button class="btn waves-effect waves-light teal lighten-3" type="submit" name="action">Log Me In
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<h2>Or...</h2>
+
+<a href="/auth/github" class="btn waves-effect waves-light grey darken-2">
+    Github Login
+    <i class="fa fa-github" aria-hidden="true"></i>
+</a>

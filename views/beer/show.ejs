@@ -2,18 +2,22 @@
 
 <h3><%= beer.tagline %></h3>
 <h4><%= beer.description %></h4>
-<h5>
+<h5><strong>Pairs well with these foods:</strong></h5>
     <% beer.food_pairing.forEach((pairing) => { %>
         <ul>
             <li><%= pairing %></li>
         </ul>
     <% }) %>
-</h5>
 
-<h5>
+
+<h5><strong>Brewed with the following hops:</strong></h5>
     <% beer.ingredients.hops.forEach((hop) => { %>
         <ul>
             <li><%= hop.name %></li>
         </ul>
     <% }) %>
-</h5>
+
+<form method="POST" action="#">
+    <button type="submit">Add to my Favorite Beers</button>
+</form>
+
