@@ -17,7 +17,25 @@ router.get('/', (req, res) => {
             beer: beer,
         })
     })
-    
+    .catch((err) => {
+        console.log('ERROR', err)
+    })  
+})
+
+//GET /show/:id  - Show a single beer
+router.get('/:id', (req, res) => {
+    var beerUrl = 'https://api.punkapi.com/v2/beers/' + req.params.id
+    axios.get(beerUrl)
+    .then((apiResponse) => {
+        var beer = apiResponse.data
+        console.log(beer[0].name)
+        res.render('beer/show', {
+            beer: beer[0],
+        })
+    })
+    .catch((err) => {
+        console.log('ERROR', err)
+    })  
 })
 
 

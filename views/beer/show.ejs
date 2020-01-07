@@ -1,0 +1,19 @@
+<h2><%= beer.name %></h2>
+
+<h3><%= beer.tagline %></h3>
+<h4><%= beer.description %></h4>
+<h5>
+    <% beer.food_pairing.forEach((pairing) => { %>
+        <ul>
+            <li><%= pairing %></li>
+        </ul>
+    <% }) %>
+</h5>
+
+<h5>
+    <% beer.ingredients.hops.forEach((hop) => { %>
+        <ul>
+            <li><%= hop.name %></li>
+        </ul>
+    <% }) %>
+</h5>
