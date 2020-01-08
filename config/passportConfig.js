@@ -65,7 +65,6 @@ passport.use(new GithubStrategy({
             firstname: name[0] || profile.username,
             lastname: name[name.length - 1],
             username: profile.username,
-            photoUrl: profile._json.avatar_url,
             bio: profile._json.bio || `Github user ${profile.username} works at ${profile._json.company} in ${profile._json.location}`
         }
     })

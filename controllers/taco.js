@@ -16,7 +16,18 @@ router.get('/', (req, res) => {
     })
     .catch((err) => {
         console.log('ERROR', err)
+        res.render('error')
     })  
+})
+
+// GET /addTaco - show form for adding a new taco recipe
+router.get('/addTaco', (req, res) => {
+    res.send('GET route addTaco')
+    // res.render('addTaco')
+    // .catch((err) => {
+    //     console.log('ERROR', err)
+    //     res.render('error')
+    // })
 })
 
 

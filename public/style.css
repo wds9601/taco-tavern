@@ -1,8 +1,19 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 main {
     text-align: center;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+#toast-container {
+    left: 40% !important;
+    right: auto !important;
+    bottom: auto !important;
 }

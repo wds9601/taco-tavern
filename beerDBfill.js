@@ -14,7 +14,6 @@ axios.get(beerUrl)
     
     beer.forEach((item) => {
         var hopsArr = []
-        var paringArr = []
         item.ingredients.hops.forEach(hop => {
             hopsArr.push(hop.name)
         })
@@ -34,8 +33,8 @@ axios.get(beerUrl)
             tagline: item.tagline,
             description: item.description,
             abv: item.abv,
-            hops: JSON.stringify(hopsArr),     //beer[i].ingredients.hops[i].name
-            foodPairing: JSON.stringify(item.food_pairing),      //beer[i].food_pairing
+            hops: JSON.stringify(hopsArr),
+            foodPairing: JSON.stringify(item.food_pairing),
             imgUrl: item.image_url
         })
     

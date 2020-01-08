@@ -4,7 +4,7 @@ let router = require('express').Router()
 //includ a reference to the models for db access
 let db = require('../models')
 
-//refernce to passport module
+//reference to passport module
 let passport = require('../config/passportConfig')
 
 //Define routes

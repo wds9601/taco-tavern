@@ -1,10 +1,12 @@
 //Required node modules
 require('dotenv').config()
 let axios = require('axios')
+let db = require('./models')
 let flash = require('connect-flash')
 let express = require('express')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
+// const { user, beer, taco } = require('sequelize')
 
 //Declare express app variable
 const app = express()

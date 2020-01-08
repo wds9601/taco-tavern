@@ -32,16 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    photoUrl: {
-      type: DataTypes.STRING,
-      validate: {
-        isUrl: {
-          msg: 'must be a valid image url'
-        }
-      }
-    },
     bio: DataTypes.TEXT,
-    admin: DataTypes.BOOLEAN,
     githubId: DataTypes.STRING,
     githubToken: DataTypes.STRING
   }, {
