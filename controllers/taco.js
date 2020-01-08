@@ -2,6 +2,10 @@ let axios = require('axios')
 let express = require('express')
 let router = require('express').Router()
 
+// GET /addTaco - show form for adding a new taco recipe
+router.get('/addTaco', (req, res) => {
+    res.render('addTaco')
+})
 
 //GET /tacos to get one random full taco recipe
 router.get('/', (req, res) => {
@@ -19,16 +23,5 @@ router.get('/', (req, res) => {
         res.render('error')
     })  
 })
-
-// GET /addTaco - show form for adding a new taco recipe
-router.get('/addTaco', (req, res) => {
-    res.send('GET route addTaco')
-    // res.render('addTaco')
-    // .catch((err) => {
-    //     console.log('ERROR', err)
-    //     res.render('error')
-    // })
-})
-
 
 module.exports = router
