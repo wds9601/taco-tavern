@@ -6,6 +6,8 @@
             <% if(!user) {%>
             <li><a href="/auth/login">Login</a></li>
             <li><a href="/auth/signup">Signup</a></li>
+            <li><a href="/beer">All Beer</a></li>
+            
             <% } else { %>
                 <li>Hi, <%= user.username %> ! </li>
                 <% if (user.admin) { %>

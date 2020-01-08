@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       abv: {
         type: Sequelize.INTEGER
@@ -24,6 +24,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       foodPairing: {
+        type: Sequelize.TEXT
+      },
+      imgUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

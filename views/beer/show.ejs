@@ -1,6 +1,7 @@
 <h2><%= beer.name %></h2>
 
 <h3><%= beer.tagline %></h3>
+<h4>ABV: <%= beer.abv %>%</h4>
 <h4><%= beer.description %></h4>
 <h5><strong>Pairs well with these foods:</strong></h5>
     <% beer.food_pairing.forEach((pairing) => { %>

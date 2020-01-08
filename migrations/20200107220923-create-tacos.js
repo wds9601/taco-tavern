@@ -12,30 +12,45 @@ module.exports = {
         type: Sequelize.STRING
       },
       recipe: {
+        type: Sequelize.TEXT
+      },
+      recipeUrl: {
         type: Sequelize.STRING
       },
-      baselayerName: {
+      baseName: {
         type: Sequelize.STRING
       },
-      baselayerRecipe: {
+      baseRecipe: {
+        type: Sequelize.TEXT
+      },
+      baseUrl: {
         type: Sequelize.STRING
       },
       condimentName: {
         type: Sequelize.STRING
       },
       condimentRecipe: {
+        type: Sequelize.TEXT
+      },
+      condimentUrl: {
         type: Sequelize.STRING
       },
       mixinName: {
         type: Sequelize.STRING
       },
       mixinRecipe: {
+        type: Sequelize.TEXT
+      },
+      mixinUrl: {
         type: Sequelize.STRING
       },
       shellName: {
         type: Sequelize.STRING
       },
       shellRecipe: {
+        type: Sequelize.TEXT
+      },
+      shellUrl: {
         type: Sequelize.STRING
       },
       createdAt: {
