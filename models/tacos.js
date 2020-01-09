@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     shellUrl: DataTypes.STRING
   }, {});
   tacos.associate = function(models) {
-    // associations can be defined here
+    models.tacos.belongsToMany(models.user, {
+      through: 'users_tacos',
+      onDelete: 'CASCADE'
+    })
   };
   return tacos;
 };

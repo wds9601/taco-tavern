@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     imgUrl: DataTypes.STRING
   }, {});
   beers.associate = function(models) {
-    // associations can be defined here
-  };
+    models.beers.belongsToMany(models.user, {
+      through: 'users_beers',
+      onDelete: 'CASCADE'
+    })
+  }
   return beers;
 };

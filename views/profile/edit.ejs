@@ -1,0 +1,14 @@
+<% if(user) { %>
+<h4>Edit your user Bio below</h4>
+
+<form method="POST" action="/profile?_method=PUT">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="bio" type="text" class="validate" name="bio">
+            <label for="bio">New Bio</label>
+        </div>
+    </div>
+    <input type="hidden" id="id" name="id" value="<%= user.id %>"> 
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<% } %>

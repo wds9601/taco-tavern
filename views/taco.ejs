@@ -1,69 +1,23 @@
-<h2>Try the mouth-watering Taco recipe below!</h2>
+<h3>Browse the mouth-watering taco recipes below!</h3>
 
 <% if(!user) { %>
-    <p>Log in to save a taco recipe as one of your Favorites, or create your own taco recipe to share with the other TacoTavern users!</p>
+    <h5>Log in to save a taco recipe as one of your Favorites, or add a new taco to the list!</h5>
     <hr>
 
-    <h4><strong><%= taco.name %></strong></h4>
-    <a href="<%= taco.url %>">See the recipe instructions for this taco</a>
-    <br>
-
-    <% if(taco.base_layer) { %>
-        <h5><%= taco.base_layer.name %></h5>
-        <a href="<%= taco.base_layer.url %>">See the Base-Layer recipe</a>
-    <% } %>
-
-
-    <% if(taco.condiment) { %>
-        <p><%= taco.condiment.name %></p>
-        <a href="<%= taco.condiment.url %>">See this Condiment recipe</a>
-    <% } %>
-
-
-    <% if(taco.shell) { %>
-        <p><%= taco.shell.name %></p>
-        <a href="<%= taco.shell.url %>">See this Taco Shell recipe</a>
-        <br>
-    <% } else { %>
-        <p>Try this recipe with your fav hard shell or soft tortilla!</p>
-    <% } %>
-
-    <% if(taco.mixin) { %>
-        <p><%= taco.mixin.name %></p>
-        <a href="<%= taco.mixin.url %>">See this Taco Mix-in recipe</a>
-    <% } %>
+    <ul>
+        <% taco.forEach((item) => { %>
+            <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
+        <% }) %>
+    </ul>
 <% } else { %>
+    <hr>
 
-    <a class="btn btn-primary" href="taco/addTaco">Add a new Taco Recipe!</a>
+    <a class="btn btn-primary" href="/taco/addTaco">Add a new Taco Recipe</a>
 
-    <h4><strong><%= taco.name %></strong></h4>
-    <a href="<%= taco.url %>">See the recipe instructions for this taco</a>
-    <br>
+    <ul>
+        <% taco.forEach((item) => { %>
+            <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
+        <% }) %>
+    </ul>
 
-    <% if(taco.base_layer) { %>
-        <h5><%= taco.base_layer.name %></h5>
-        <a href="<%= taco.base_layer.url %>">See the Base-Layer recipe</a>
-    <% } %>
-
-
-    <% if(taco.condiment) { %>
-        <p><%= taco.condiment.name %></p>
-        <a href="<%= taco.condiment.url %>">See this Condiment recipe</a>
-        <br>
-    <% } %>
-
-
-    <% if(taco.shell) { %>
-        <p><%= taco.shell.name %></p>
-        <a href="<%= taco.shell.url %>">See this Taco Shell recipe</a>
-        <br>
-    <% } else { %>
-        <p>Try this recipe with your fav hard shell or soft tortilla!</p>
-    <% } %>
-
-    <% if(taco.mixin) { %>
-        <p><%= taco.mixin.name %></p>
-        <a href="<%= taco.mixin.url %>">See this Taco Mix-in recipe</a>
-        <br>
-    <% } %>
 <% } %>

@@ -3,6 +3,9 @@
     <div class="col s8">
         <p><strong>Full Name: <%= user.firstname%> <%= user.lastname%></strong></p>
         <p><%= user.bio %></p>
+        <form method="GET" action="profile/edit">
+            <button class="btn btn-primary" type="submit">Edit Bio</button>
+        </form>
         <p>Fav beers go here</p>
         <p>Fav tacos go here</p>
     </div>

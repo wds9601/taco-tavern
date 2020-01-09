@@ -1,0 +1,65 @@
+<h2>Try this delicious Taco recipe!</h2>
+
+<% if(!user) { %>
+    <p>Log in to save this taco recipe as one of your Favorites, or create your own taco recipe to share with the other TacoTavern users!</p>
+    <hr>
+
+    <h4><strong><%= taco.name %></strong></h4>
+    <% if(taco.recipe) { %>
+        <p><%= taco.recipe %></p>
+    <% } %>
+
+    <% if(taco.baseNme) { %>
+        <h5><%= taco.baseName %></h5>
+        <p><%= taco.baseRecipe %></p>
+    <% } %>
+
+    <% if(taco.condimentName) { %>
+        <h5><%= taco.condimentName %></h5>
+        <p><%= taco.condimentRecipe %></p>
+    <% } %>
+
+    <% if(taco.mixinName) { %>
+        <h5><%= taco.mixinName %></h5>
+        <p><%= taco.mixinRecipe %></p>
+    <% } %>
+
+   <% if(taco.shellName) { %>
+        <h5><%= taco.shellName %></h5>
+        <p><%= taco.shellRecipe %></p>
+    <% } else { %>
+        <p>Try this recipe with your fav hard shell or soft tortilla!</p>
+    <% } %>
+<% } else { %>
+    <hr>
+    <h4><strong><%= taco.name %></strong></h4>
+    <% if(taco.recipe) { %>
+        <p><%= taco.recipe %></p>
+    <% } %>
+
+    <% if(taco.baseName) { %>
+        <h5><%= taco.baseName %></h5>
+        <p><%= taco.baseRecipe %></p>
+    <% } %>
+
+    <% if(taco.condimentName) { %>
+        <h5><%= taco.condimentName %></h5>
+        <p><%= taco.condimentRecipe %></p>
+    <% } %>
+
+    <% if(taco.mixinName) { %>
+        <h5><%= taco.mixinName %></h5>
+        <p><%= taco.mixinRecipe %></p>
+    <% } %>
+
+   <% if(taco.shellName) { %>
+        <h5><%= taco.shellName %></h5>
+        <p><%= taco.shellRecipe %></p>
+    <% } else { %>
+        <p>Try this recipe with your fav hard shell or soft tortilla!</p>
+    <% } %>
+
+    <form method="POST" action="#">
+        <button type="submit">Add this taco recipe to my Favorites!</button>
+    </form>
+<% } %>

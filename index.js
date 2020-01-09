@@ -5,8 +5,8 @@ let db = require('./models')
 let flash = require('connect-flash')
 let express = require('express')
 let layouts = require('express-ejs-layouts')
+let methodOverride = require('method-override')
 let session = require('express-session')
-// const { user, beer, taco } = require('sequelize')
 
 //Declare express app variable
 const app = express()
@@ -19,6 +19,7 @@ app.set('view engine','ejs')
 app.use(layouts)
 app.use('/', express.static('public'))
 app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
