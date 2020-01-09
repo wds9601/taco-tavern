@@ -6,7 +6,12 @@
         <form method="GET" action="profile/edit">
             <button class="btn btn-primary" type="submit">Edit Bio</button>
         </form>
-        <p>Fav beers go here</p>
-        <p>Fav tacos go here</p>
+        <p><strong>My Favorite Beers:</strong></p>
+        <ul>
+            <% brews.forEach((brew) => { %>
+                    <li><a href="/beer/<%=brew.dataValues.beerId%>"><%= brew.name %></a></li>
+            <% }) %>
+        </ul>
+        <p><strong>My Favorite Tacos:</strong></p>
     </div>
 </div>

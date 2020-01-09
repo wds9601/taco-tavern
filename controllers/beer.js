@@ -5,7 +5,6 @@ let db = require('../models')
 
 //POST /beer/addBeer - Create a new beer and add to beer db
 router.post('/', (req, res) => {
-    // res.send('POST to beer')
     db.beers.findOrCreate({
         where: { name: req.body.name },
         defaults: req.body
@@ -15,7 +14,6 @@ router.post('/', (req, res) => {
             console.log(`${newBeer} was created: ${wasCreated}`)
         } else {
             req.flash('error', 'Sorry! This beer name already exists.')
-            console.log('ERROR', err)
         }
         res.redirect('/beer')
     })
@@ -25,20 +23,27 @@ router.post('/', (req, res) => {
     })
 })
 
+//POST /beer/:id - add a favorite beer to the users_beers
+router.post('/:id', (req, res) => {
+    db.users_beers.findOrCreate({
+        where: { beerId: req.body.beerId, userId: req.body.id}
+    })
+    .then(([newFav, wasCreated]) => {
+        if(wasCreated) {
+            console.log(`${newFav} was created: ${wasCreated}`)
+        } else {
+            req.flash('error', 'You have already added this beer to your favorites.')
+        }
+        res.redirect('../profile')
+    })
+    .catch((err) => {
+        console.log('ERROR', err)
+        res.render('error')
+    })
+})
+
 //GET /beers to browse all beer
 router.get('/', (req, res) => {
-    // //API URL to call
-    // var beerUrl = 'https://api.punkapi.com/v2/beers'
-    // //Use request to call API
-    // axios.get(beerUrl)
-    // .then((apiResponse) => {
-    //     // console.log(apiResponse.data)
-    //     var beer = apiResponse.data
-    //     // console.log(beer[0].ingredients.hops[0].name)
-    //     res.render('beer', {
-    //         beer: beer,
-    //     })
-    // })
     db.beers.findAll()
     .then((beer) => {
         res.render('beer', {
@@ -58,15 +63,6 @@ router.get('/addBeer', (req, res) => {
 
 //GET /:id  - Show a single beer
 router.get('/:id', (req, res) => {
-    // var beerUrl = 'https://api.punkapi.com/v2/beers/' + req.params.id
-    // axios.get(beerUrl)
-    // .then((apiResponse) => {
-    //     var beer = apiResponse.data
-    //     console.log(beer[0].name)
-    //     res.render('beer/show', {
-    //         beer: beer[0],
-    //     })
-    // })
     db.beers.findOne({
         where: { id: req.params.id }
     })

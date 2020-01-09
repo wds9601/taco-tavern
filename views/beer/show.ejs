@@ -33,8 +33,10 @@
         <ul>
             <li><%= beer.hops %></li>
         </ul>
-        
-    <form method="POST" action="#">
+
+    <form method="POST" action="/beer/:id">
+        <input type="hidden" name="id" value="<%= user.id %>">
+        <input type="hidden" name="beerId" value="<%= beer.id %>">
         <button type="submit">Add this beer to my Favorites!</button>
     </form>
 <% } %>
