@@ -8,8 +8,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn('users', 'githubId').then(()=> {
-      return queryInterface.addColumn('users', 'githubToken')
+    return queryInterface.removeColumn('users', 'githubId').then(()=> {
+      return queryInterface.removeColumn('users', 'githubToken')
     })
   }
 };
