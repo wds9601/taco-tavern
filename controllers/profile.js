@@ -1,4 +1,3 @@
-let axios = require('axios')
 let db = require('../models')
 let router = require('express').Router()
 let isLoggedIn = require('../middleware/isLoggedIn')
@@ -77,21 +76,5 @@ router.delete('/', (req , res) => {
         })
     }
 })
-
-// //DELETE BEER /profile - delete a favorited beer from user's list
-// router.delete('/', (req, res) => {
-//     db.users_beers.destroy({
-//         where: { beerId: req.body.beerId }
-//     })
-//     .then(destroyedBeer => {
-//         res.redirect('/profile')
-//     })
-//     .catch(err => {
-//         console.log('ERROR', err)
-//         res.render('error')
-//     })
-// })
-
-
 
 module.exports = router

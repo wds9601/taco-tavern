@@ -93,5 +93,4 @@ router.get('/callback/github', passport.authenticate('github', {
     failureFlash: 'Github does not like it'
 }))
 
-//Export router object so we can include it in other files
 module.exports = router
