@@ -5,7 +5,6 @@ let db = require('../models')
 
 //POST /taco/addTaco - Create a new taco recipe and add to tacos db
 router.post('/', (req, res) => {
-    // res.send('POST to taco')
     db.tacos.findOrCreate({
         where: { name: req.body.name },
         defaults: req.body
@@ -18,6 +17,25 @@ router.post('/', (req, res) => {
             console.log('ERROR', err)
         }
         res.redirect('/taco')
+    })
+    .catch((err) => {
+        console.log('ERROR', err)
+        res.render('error')
+    })
+})
+
+//POST /taco/:id - add a favorite taco to the users_tacos
+router.post('/:id', (req, res) => {
+    db.users_tacos.findOrCreate({
+        where: { tacoId: req.body.tacoId, userId: req.body.id}
+    })
+    .then(([newFav, wasCreated]) => {
+        if(wasCreated) {
+            console.log(`${newFav} was created: ${wasCreated}`)
+        } else {
+            req.flash('error', 'You have already added this taco to your favorites.')
+        }
+        res.redirect('../profile')
     })
     .catch((err) => {
         console.log('ERROR', err)

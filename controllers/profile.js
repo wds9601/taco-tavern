@@ -5,18 +5,27 @@ let isLoggedIn = require('../middleware/isLoggedIn')
 
 //GET /profile - View user profile page
 router.get('/', isLoggedIn, (req, res) => {
-    db.users_beers.findAll({
-        include: [db.beers]
+    db.user.findOne({
+        where: { id: req.user.id }
     })
-    .then(beers => {
-        let brews = beers
-        console.log('BREWWWWWWWWWWWS:', brews)
-        res.render('profile/main', { brews })
+    .then(user => {
+        user.getBeers()
+        .then( (brews) => {
+            user.getTacos()
+            .then((tacos) => {
+                res.render('profile/main', { brews, tacos })
+            })
+            .catch(err => {
+                console.log('ERROR', err)
+                res.render('error')
+            })
+        })
+        .catch(err => {
+            console.log('ERROR', err)
+            res.render('error')
+        })
     })
-    .catch(err => {
-        console.log('ERROR', err)
-        res.render('error')
-    })
+
 })
 
 //GET /edit - get edit page for user bio

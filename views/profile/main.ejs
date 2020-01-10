@@ -2,16 +2,21 @@
 <div class="row">
     <div class="col s8">
         <p><strong>Full Name: <%= user.firstname%> <%= user.lastname%></strong></p>
-        <p><%= user.bio %></p>
+        <p><strong>User Bio: <%= user.bio %></strong></p>
         <form method="GET" action="profile/edit">
             <button class="btn btn-primary" type="submit">Edit Bio</button>
         </form>
         <p><strong>My Favorite Beers:</strong></p>
         <ul>
             <% brews.forEach((brew) => { %>
-                    <li><a href="/beer/<%=brew.dataValues.beerId%>"><%= brew.name %></a></li>
+                    <li><a href="/beer/<%=brew.id%>"><%= brew.name %></a></li>
             <% }) %>
         </ul>
         <p><strong>My Favorite Tacos:</strong></p>
+        <ul>
+            <% tacos.forEach((taco) => { %>
+                    <li><a href="/taco/<%=taco.id%>"><%= taco.name %></a></li>
+            <% }) %>
+        </ul>
     </div>
 </div>

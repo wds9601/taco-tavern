@@ -59,7 +59,9 @@
         <p>Try this recipe with your fav hard shell or soft tortilla!</p>
     <% } %>
 
-    <form method="POST" action="#">
+    <form method="POST" action="/taco/:id">
+        <input type="hidden" name="id" value="<%= user.id %>">
+        <input type="hidden" name="tacoId" value="<%= taco.id %>">
         <button type="submit">Add this taco recipe to my Favorites!</button>
     </form>
 <% } %>
