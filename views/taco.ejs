@@ -1,23 +1,24 @@
-<h3>Browse the mouth-watering taco recipes below!</h3>
+<div class="taco-all" class="responsive-img">
+    <h3>Browse the mouth-watering taco recipes below!</h3>
 
-<% if(!user) { %>
-    <h5>Log in to save a taco recipe as one of your Favorites, or add a new taco to the list!</h5>
-    <hr>
+    <% if(!user) { %>
+        <h5>Log in to save a taco recipe as one of your Favorites, or add a new taco to the list!</h5>
+        <hr>
 
-    <ul>
-        <% taco.forEach((item) => { %>
-            <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
-        <% }) %>
-    </ul>
-<% } else { %>
-    <hr>
+        <ul>
+            <% taco.forEach((item) => { %>
+                <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <hr>
 
-    <a class="btn btn-primary" href="/taco/addTaco">Add a new Taco Recipe</a>
+        <a class="btn btn-primary" href="/taco/addTaco">Add a new Taco Recipe</a>
 
-    <ul>
-        <% taco.forEach((item) => { %>
-            <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
-        <% }) %>
-    </ul>
-
-<% } %>
+        <ul>
+            <% taco.forEach((item) => { %>
+                <li><a href="/taco/<%=item.id%>"><%= item.name %></a></li>
+            <% }) %>
+        </ul>
+    <% } %>
+</div>

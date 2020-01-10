@@ -1,24 +1,25 @@
-<h3>Browse all our tasty suds below.</h3>
+<div class="beer-all">
+    <h3>Browse all our tasty suds below.</h3>
 
-<% if(!user) { %>
-    <h5>Log in to save a beer as one of your Favorites, or add a new beer to the list!</h5>
-    <hr>
+    <% if(!user) { %>
+        <h5>Log in to save a beer as one of your Favorites, or add a new beer to the list!</h5>
+        <hr>
 
-    <ul>
-        <% beer.forEach((brew) => { %>
-            <li><a href="/beer/<%=brew.id%>"><%= brew.name %></a></li>
-        <% }) %>
-    </ul>
-<% } else { %>
-    <hr>
+        <ul>
+            <% beer.forEach((brew) => { %>
+                <li><a href="/beer/<%=brew.id%>"><%= brew.name %></a></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <hr>
 
-    <a class="btn btn-primary" href="/beer/addBeer">Add a new Beer</a>
+        <a class="btn btn-primary" href="/beer/addBeer">Add a new Beer</a>
 
-    <ul>
-        <% beer.forEach((brew) => { %>
-            <li><a href="/beer/<%=brew.id%>"><%= brew.name %></a></li>
-        <% }) %>
-    </ul>
-
-<% } %>
+        <ul>
+            <% beer.forEach((brew) => { %>
+                <li><a href="/beer/<%=brew.id%>"><%= brew.name %></a></li>
+            <% }) %>
+        </ul>
+    <% } %>
+</div>
 

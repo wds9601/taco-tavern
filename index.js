@@ -56,3 +56,21 @@ app.get('*', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
     console.log('You are connected to 3000.....')
 })
+
+//taco image 1 url
+// https://thenypost.files.wordpress.com/2019/10/national-taco-day-2019-free-freebies-deals-specials.jpg?quality=80&strip=all
+
+//taco image 2 url
+// https://www.instagram.com/p/BlL_Q7pFxOc/media?size=l
+
+//beer image 1 url
+//https://sophosnews.files.wordpress.com/2016/08/free-beer.jpg?w=780&h=408&crop=1
+
+//taco and beer image 1 url
+// https://i.pinimg.com/originals/c2/ec/e1/c2ece1d91f5a89bd29967798b90636d8.jpg
+
+//taco and beer image 2 url 
+// http://thebeeroness.com/wp-content/uploads/2012/09/Beer-Chicken-Tacos-Beer-Corn-Tortillas.jpg
+
+//taco and beer cartoon image - for error page
+//https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160601371/57935336-taco-with-beer.jpg

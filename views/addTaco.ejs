@@ -1,101 +1,108 @@
-<h2>Create a new taco recipe for other Taco Tavern users to check out!</h2>
+<div class="taco-add">
+    <% if(user) { %>
+        <h2>Create a new taco recipe for other Taco Tavern users to check out!</h2>
 
-<div class="row">
-    <form method="POST" action="/taco" class="col s12">
         <div class="row">
-            <div class="row">
+            <form method="POST" action="/taco" class="col s12">
                 <div class="row">
-                    <div class="input-field col s4">
-                        <input id="name" type="text" class="validate" name="name" required>
-                        <label for="name">Taco Name</label>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input id="name" type="text" class="validate" name="name" required>
+                                <label for="name">Taco Name</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input id="recipeUrl" type="text" class="validate" name="recipeUrl">
+                                <label for="recipeUrl">Recipe URL (if any)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="recipe" type="text" class="validate" name="recipe">
+                                <label for="recipe">Recipe Instructions</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field col s8">
-                        <input id="recipeUrl" type="text" class="validate" name="recipeUrl">
-                        <label for="recipeUrl">Recipe URL (if any)</label>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input id="baseName" type="text" class="validate" name="baseName" required>
+                                <label for="baseName">Base-Layer Name</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input id="baseUrl" type="text" class="validate" name="baseUrl">
+                                <label for="baseUrl">Base-Layer Recipe URL (if any)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="baseRecipe" type="text" class="validate" name="baseRecipe">
+                                <label for="baseRecipe">Base-Layer Recipe Instructions</label>
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input id="condimentName" type="text" class="validate" name="condimentName">
+                                <label for="condimentName">Condiment Name</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input id="condimentUrl" type="text" class="validate" name="condimentUrl">
+                                <label for="condimentUrl">Condiment Recipe URL (if any)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="condimentRecipe" type="text" class="validate" name="condimentRecipe">
+                                <label for="condimentRecipe">Condiment Recipe Instructions</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input id="mixinName" type="text" class="validate" name="mixinName">
+                                <label for="mixinName">Mix-in Name</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input id="mxinUrl" type="text" class="validate" name="mixinUrl">
+                                <label for="mixinUrl">Mix-in Recipe URL (if any)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="mxinRecipe" type="text" class="validate" name="mixinRecipe">
+                                <label for="mixinRecipe">Mix-in Recipe Instructions</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input id="shellName" type="text" class="validate" name="shellName">
+                                <label for="shellName">Shell Name</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input id="shellUrl" type="text" class="validate" name="shellUrl">
+                                <label for="shellUrl">Shell Recipe URL (if any)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="shellRecipe" type="text" class="validate" name="shellRecipe">
+                                <label for="shellRecipe">Shell Recipe Instructions</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Add this taco recipe to the list!
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="recipe" type="text" class="validate" name="recipe">
-                        <label for="recipe">Recipe Instructions</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="baseName" type="text" class="validate" name="baseName" required>
-                        <label for="baseName">Base-Layer Name</label>
-                    </div>
-                    <div class="input-field col s8">
-                        <input id="baseUrl" type="text" class="validate" name="baseUrl">
-                        <label for="baseUrl">Base-Layer Recipe URL (if any)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="baseRecipe" type="text" class="validate" name="baseRecipe">
-                        <label for="baseRecipe">Base-Layer Recipe Instructions</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="condimentName" type="text" class="validate" name="condimentName">
-                        <label for="condimentName">Condiment Name</label>
-                    </div>
-                    <div class="input-field col s8">
-                        <input id="condimentUrl" type="text" class="validate" name="condimentUrl">
-                        <label for="condimentUrl">Condiment Recipe URL (if any)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="condimentRecipe" type="text" class="validate" name="condimentRecipe">
-                        <label for="condimentRecipe">Condiment Recipe Instructions</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="mixinName" type="text" class="validate" name="mixinName">
-                        <label for="mixinName">Mix-in Name</label>
-                    </div>
-                    <div class="input-field col s8">
-                        <input id="mxinUrl" type="text" class="validate" name="mixinUrl">
-                        <label for="mixinUrl">Mix-in Recipe URL (if any)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="mxinRecipe" type="text" class="validate" name="mixinRecipe">
-                        <label for="mixinRecipe">Mix-in Recipe Instructions</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input id="shellName" type="text" class="validate" name="shellName">
-                        <label for="shellName">Shell Name</label>
-                    </div>
-                    <div class="input-field col s8">
-                        <input id="shellUrl" type="text" class="validate" name="shellUrl">
-                        <label for="shellUrl">Shell Recipe URL (if any)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="shellRecipe" type="text" class="validate" name="shellRecipe">
-                        <label for="shellRecipe">Shell Recipe Instructions</label>
-                    </div>
-                </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add this taco recipe to the list!
-                <i class="material-icons right">send</i>
-            </button>
+            </form>
         </div>
-    </form>
+    <% } else { %>
+        <h3>You must be logged in to view this page!</h3>
+        <p><a href="/auth/login">Take me to the Log-In page</a><p>
+    <% } %>
 </div>

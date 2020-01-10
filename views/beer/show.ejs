@@ -1,45 +1,47 @@
-<% if (!user) { %>
-    <h2><%= beer.name %></h2>
+<div class="beer-show">
+    <% if (!user) { %>
+        <h2><%= beer.name %></h2>
 
-    <h3><%= beer.tagline %></h3>
-    <h4>ABV: <%= beer.abv %>%</h4>
-    <h4><%= beer.description %></h4>
+        <h3><%= beer.tagline %></h3>
+        <h4>ABV: <%= beer.abv %>%</h4>
+        <h4><%= beer.description %></h4>
 
-    <h5><strong>Pairs well with these foods:</strong></h5>
-        <ul>
-            <li><%= beer.foodPairing %></li>
-        </ul>
-
-
-    <h5><strong>Brewed with the following hops:</strong></h5>
-        <ul>
-            <li><%= beer.hops %></li>
-        </ul>
-
-<% } else { %>
-    <h2><%= beer.name %></h2>
-
-    <h3><%= beer.tagline %></h3>
-    <h4>ABV: <%= beer.abv %>%</h4>
-    <h4><%= beer.description %></h4>
-
-    <h5><strong>Pairs well with these foods:</strong></h5>
-        <ul>
-            <li><%= beer.foodPairing %></li>
-        </ul>
+        <h5><strong>Pairs well with these foods:</strong></h5>
+            <ul>
+                <li><%= beer.foodPairing %></li>
+            </ul>
 
 
-    <h5><strong>Brewed with the following hops:</strong></h5>
-        <ul>
-            <li><%= beer.hops %></li>
-        </ul>
+        <h5><strong>Brewed with the following hops:</strong></h5>
+            <ul>
+                <li><%= beer.hops %></li>
+            </ul>
 
-    <form method="POST" action="/beer/:id">
-        <input type="hidden" name="id" value="<%= user.id %>">
-        <input type="hidden" name="beerId" value="<%= beer.id %>">
-        <button type="submit">Add this beer to my Favorites!</button>
-    </form>
-<% } %>
+    <% } else { %>
+        <h2><%= beer.name %></h2>
+
+        <h3><%= beer.tagline %></h3>
+        <h4>ABV: <%= beer.abv %>%</h4>
+        <h4><%= beer.description %></h4>
+
+        <h5><strong>Pairs well with these foods:</strong></h5>
+            <ul>
+                <li><%= beer.foodPairing %></li>
+            </ul>
+
+
+        <h5><strong>Brewed with the following hops:</strong></h5>
+            <ul>
+                <li><%= beer.hops %></li>
+            </ul>
+
+        <form method="POST" action="/beer/:id">
+            <input type="hidden" name="id" value="<%= user.id %>">
+            <input type="hidden" name="beerId" value="<%= beer.id %>">
+            <button type="submit">Add this beer to my Favorites!</button>
+        </form>
+    <% } %>
+</div>
 
 
 

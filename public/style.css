@@ -2,6 +2,15 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    background: url(https://i.pinimg.com/originals/c2/ec/e1/c2ece1d91f5a89bd29967798b90636d8.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 main {
@@ -10,10 +19,53 @@ main {
 
 footer {
     margin-top: 30px;
+    margin-bottom: 0;
 }
 
 #toast-container {
     left: 40% !important;
     right: auto !important;
     bottom: auto !important;
+}
+
+.title, .brand-logo {
+    font-family: 'Montserrat Subrayada', sans-serif; 
+}
+
+.title-container {
+    background-color: rgba(242, 98, 69, 0.79);
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.home a {
+    color: black;
+}
+
+.home a:hover {
+    color: lightblue
+}
+
+.taco-all, .taco-show, .taco-add, .beer-all, .beer-show, .beer-add, .login, .signup, .error, .profile-main, .profile-edit {
+    background-color: rgba(242, 98, 69, 0.79);
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.taco-all a{
+    color: black;
+}
+
+.taco-all a:hover {
+    color: lightblue;
+}
+
+.beer-all a{
+    color: black;
+}
+
+.beer-all a:hover {
+    color: lightblue;
 }
