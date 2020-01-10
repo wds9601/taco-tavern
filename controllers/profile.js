@@ -51,6 +51,47 @@ router.put('/', (req, res) => {
     })
 })
 
-//DELETE /profile - delete a favorited item from the list of favorites
+//DELETE TACO /profile - delete a favorite taco from user's list
+router.delete('/', (req , res) => {
+    if(req.body.tacoId) {
+        db.users_tacos.destroy({
+            where: { tacoId: req.body.tacoId }
+        })
+        .then(destroyedTaco => {
+            res.redirect('/profile')
+        })
+        .catch(err => {
+            console.log('ERROR', err)
+            res.render('error')
+        })
+    } else {
+        db.users_beers.destroy({
+            where: { beerId: req.body.beerId }
+        })
+        .then(destroyedBeer => {
+            res.redirect('/profile')
+        })
+        .catch(err => {
+            console.log('ERROR', err)
+            res.render('error')
+        })
+    }
+})
+
+// //DELETE BEER /profile - delete a favorited beer from user's list
+// router.delete('/', (req, res) => {
+//     db.users_beers.destroy({
+//         where: { beerId: req.body.beerId }
+//     })
+//     .then(destroyedBeer => {
+//         res.redirect('/profile')
+//     })
+//     .catch(err => {
+//         console.log('ERROR', err)
+//         res.render('error')
+//     })
+// })
+
+
 
 module.exports = router

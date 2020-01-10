@@ -10,8 +10,6 @@ let LocalStrategy = require('passport-local').Strategy
 let db = require('../models')
 
 //Serialization and DeSerialization functions
-//These are for passport to use tostore/lookup info
-//Serialize: Reduce the user to only their unique ID
 passport.serializeUser((user, cb) => {
     //callback function params: error message (null if no error); user data (only the id)
     cb(null, user.id) //grabbing user, chopping off all data excpeet for ID
