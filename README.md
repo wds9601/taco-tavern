@@ -1,9 +1,17 @@
 # Taco Tavern
+http://taco-tavern.herokuapp.com/
 
 This revolutionary app allows a user to browse our celebrated beer cellar and add selections to their personal favorites list. Additionally, users can add their own beer recommendations to the vault so that other Taco Tavern friends can view and favorite them. Whats so extraordinary about a beer app, you ask?  Tacos.  Taco Tavern also allows users to browse a mouth-watering list of creative taco recipes, which can be added a your Favorite Tacos list.  From a user's profile page, they can see all their favorite brews and tacos - the perfect way to kick off the weekend!
 
-# User Story
+## Technologies used
+* HTML/CSS
+* JavaScript
+* Express
+* Node
+* PostgreSQL
+* Sequelize (ORM)
 
+# User Story
 * As a guest to the app I can:
     * Browse through lists of beers and taco recipes.
     * See details about the beers and recipes.
@@ -13,8 +21,27 @@ This revolutionary app allows a user to browse our celebrated beer cellar and ad
     * Add new beers to the Taco Tavern cellar list.
     * Add new taco recipes to the Taco Tavern recipe list.
 
-# App Routes
+## Development process
+- Jan 5, 2020
+    - Finalized app idea and researched possible APIs to use for beer and taco recipe data
+    - Began forming models for SQL database
+    - Sketched out basic user flow through app, app features
+- Jan 6, 2020
+    - Began degigning and constructing webpage
+    - Created backend routes
+    - Inital data display on page
+    - Running into issues with db modeling and form of returned API data
+- Jan 7, 2020
+    - Worked on restructuring db models to better reflect user input as well as API data
+    - Continue to develop webpage, adding forms and basic functionality
+- Jan 8, 2020
+    - Worked on updating backend routes and added PUT and DELETE routes for user bio and user favorites
+- Jan 9, 2020
+    - Finalized routes and functionality
+    - Tinkered with display of data on webpage
+    - Added styling and background image
 
+# App Routes
 | Method | Path | Location | Purpose |
 | ------ | ---------------- | --------------- | ------------------------ |
 | GET | / | index.js | Home Page |
